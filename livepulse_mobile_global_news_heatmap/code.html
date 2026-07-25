@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LivePulse | Global News Heatmap</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=JetBrains+Mono:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#aed500",
+                    "on-tertiary-fixed-variant": "#8f0041",
+                    "outline-variant": "#444933",
+                    "on-primary-container": "#576c00",
+                    "on-secondary-fixed-variant": "#74009f",
+                    "on-secondary-container": "#480063",
+                    "tertiary-container": "#ffd9e0",
+                    "surface-container-low": "#1b1b1e",
+                    "secondary-fixed": "#f8d8ff",
+                    "surface-container-lowest": "#0e0e11",
+                    "tertiary": "#ffffff",
+                    "surface-variant": "#353438",
+                    "secondary-fixed-dim": "#ecb2ff",
+                    "outline": "#8e9378",
+                    "on-error-container": "#ffdad6",
+                    "error": "#ffb4ab",
+                    "primary-fixed": "#c7f300",
+                    "surface-container": "#1f1f22",
+                    "background": "#131316",
+                    "tertiary-fixed-dim": "#ffb1c3",
+                    "surface-bright": "#39393c",
+                    "on-primary": "#293500",
+                    "on-tertiary-fixed": "#3f0019",
+                    "on-background": "#e4e1e6",
+                    "inverse-on-surface": "#303033",
+                    "on-surface": "#e4e1e6",
+                    "on-primary-fixed": "#171e00",
+                    "inverse-surface": "#e4e1e6",
+                    "primary-fixed-dim": "#aed500",
+                    "tertiary-fixed": "#ffd9e0",
+                    "surface": "#131316",
+                    "surface-dim": "#131316",
+                    "on-secondary": "#520071",
+                    "error-container": "#93000a",
+                    "secondary-container": "#cf5cff",
+                    "primary": "#ffffff",
+                    "on-secondary-fixed": "#320047",
+                    "surface-container-highest": "#353438",
+                    "on-tertiary": "#66002c",
+                    "inverse-primary": "#526600",
+                    "surface-container-high": "#2a2a2d",
+                    "on-surface-variant": "#c5c9ac",
+                    "on-error": "#690005",
+                    "on-tertiary-container": "#c6005d",
+                    "primary-container": "#c7f300",
+                    "on-primary-fixed-variant": "#3d4d00",
+                    "secondary": "#ecb2ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "unit": "8px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Bricolage Grotesque"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "headline-md": ["Bricolage Grotesque"],
+                    "headline-lg": ["Bricolage Grotesque"],
+                    "body-md": ["Hanken Grotesk"],
+                    "label-caps": ["JetBrains Mono"],
+                    "display-xl": ["Bricolage Grotesque"],
+                    "display-xl-mobile": ["Bricolage Grotesque"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "display-xl": ["72px", {"lineHeight": "76px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0F0F12;
+            color: #e4e1e6;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .neon-pulse {
+            animation: pulse-glow 2s infinite ease-in-out;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 10px rgba(199, 243, 0, 0.4), 0 0 20px rgba(199, 243, 0, 0.2); }
+            50% { box-shadow: 0 0 25px rgba(199, 243, 0, 0.8), 0 0 45px rgba(199, 243, 0, 0.4); }
+        }
+        .pink-pulse {
+            animation: pink-glow 1.5s infinite;
+        }
+        @keyframes pink-glow {
+            0% { transform: scale(0.9); opacity: 0.7; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(0.9); opacity: 0.7; }
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="font-body-md text-body-md antialiased">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-sm">
+<div class="flex justify-between items-center px-margin-mobile h-20 max-w-container-max mx-auto">
+<h1 class="font-display-xl-mobile text-headline-md text-primary-fixed tracking-tighter">LivePulse</h1>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary-fixed transition-colors">search</button>
+<div class="h-8 w-8 rounded-full border border-primary-fixed/30 p-0.5">
+<img class="w-full h-full rounded-full object-cover" data-alt="A stylized portrait of a modern music enthusiast with neon lighting reflecting off their face, set against a dark, tech-inspired background with high-contrast sharp details and a premium editorial feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC15cpVlTl4Ed2OOc32LmU_xoTujrc9pMbldKLC1hc7bnE9dhHxSSb-Sq0QXRbVJppyKm-y3iD3TiSJVKIjwOrhJJ2aKnudKDaisqh7voz0t_8J3DKLyW-LsZ2nx4wxNVRNJLGw0QThVUYneMCLhCppnfUqBb0tdaj_JSNWwRlvVJdAmuis03qMpQzVMu6VX4uDaz7sAb0JzrqQ_PcrWN9hFm2zTS5va6TXcjrXluJMl4LiVeFTkv-kYu_g_nd2xR2TQnJsqvFV9pA"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-20 pb-32">
+<!-- Hero Section / Map Canvas -->
+<section class="relative w-full h-[530px] overflow-hidden flex items-center justify-center">
+
+<!-- Global Heatmap Visualization -->
+<div class="relative z-10 w-full h-full px-margin-mobile py-8 flex flex-col">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2 px-3 py-1 bg-surface-container-high/80 backdrop-blur-md rounded-full border border-white/10">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container pink-pulse"></span>
+<span class="font-label-caps text-label-caps text-on-surface tracking-widest">LIVE PULSE MAP</span>
+</div>
+<button class="glass-panel p-2 rounded-lg text-primary-fixed">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+<!-- Map Interface Placeholder -->
+<div class="flex-grow relative mt-4">
+<!-- Geographic Anchor Points (Neon Clusters) -->
+<!-- North America -->
+<div class="absolute top-[25%] left-[20%] group">
+<div class="w-6 h-6 bg-primary-fixed/40 rounded-full flex items-center justify-center neon-pulse">
+<div class="w-2 h-2 bg-primary-fixed rounded-full"></div>
+</div>
+<div class="absolute top-8 left-0 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap glass-panel px-2 py-1 rounded text-[10px] font-label-caps">L.A. BURNING</div>
+</div>
+<!-- Europe -->
+<div class="absolute top-[20%] left-[50%]">
+<div class="w-10 h-10 bg-secondary-container/30 rounded-full flex items-center justify-center border border-secondary-container/50 animate-pulse">
+<div class="w-3 h-3 bg-secondary-container rounded-full"></div>
+</div>
+</div>
+<!-- Asia -->
+<div class="absolute top-[35%] left-[75%]">
+<div class="w-8 h-8 bg-primary-fixed/20 rounded-full flex items-center justify-center neon-pulse">
+<div class="w-2 h-2 bg-primary-fixed rounded-full"></div>
+</div>
+</div>
+<!-- South America -->
+<div class="absolute top-[65%] left-[30%]">
+<div class="w-5 h-5 bg-tertiary-container/40 rounded-full flex items-center justify-center pink-pulse">
+<div class="w-2 h-2 bg-on-tertiary-container rounded-full"></div>
+</div>
+</div>
+<!-- Simplified Map Wireframe Overlay -->
+<div class="absolute inset-0 pointer-events-none opacity-20" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0); background-size: 24px 24px;"></div>
+</div>
+<!-- Curator Meta -->
+<div class="mt-auto flex items-end justify-between">
+<div>
+<p class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-tighter">Curated by</p>
+<p class="font-headline-md text-primary-fixed italic tracking-tight">Thiago Reed</p>
+</div>
+<div class="text-right">
+<p class="font-label-caps text-label-caps text-on-surface">1,248 ACTIVE NODES</p>
+<p class="text-[10px] text-on-surface-variant">UPDATED 2M AGO</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Regional Pulses List -->
+<section class="px-margin-mobile mt-8 space-y-6">
+<header class="flex items-end justify-between">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Regional Pulses</h2>
+<a class="font-label-caps text-label-caps text-primary-fixed border-b border-primary-fixed/30 pb-0.5" href="#">VIEW ALL</a>
+</header>
+<div class="space-y-4">
+<!-- Pulse Item 1 -->
+<div class="glass-panel p-4 rounded-xl flex gap-4 group active:scale-[0.98] transition-transform">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 border border-white/5">
+<img class="w-full h-full object-cover" data-alt="Close-up artistic shot of a neon-lit city skyline at night, focused on the vibrant blues and electric yellows of skyscrapers against a deep midnight sky, embodying high-tech music energy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR2pgv_y8cbYeuQCwXGd3s0vMnBklrIgbDWpvStsb3ZppCUGa8AGTR_Nd4kSgkcSS9IfEorg_nH6BGmTjqsnk7JnFBfWE8IHQyhc3dAOxx3DwcY7opZK5IuOXzWFD-S6pymuF_VjerOlaflssBKyBwhGCbq01uc3eY4BQRHfTZ0e8_TOdo1utkQVVPr7OF_TujEXJrHIiFdTct1pRI3Fge_bcOzJ1wAqcZ5p2qj92NO8nn76T7_5N9fSIlCzeM0TXJML_MR4rW1L8"/>
+</div>
+<div class="flex flex-col justify-between py-1">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-caps text-[10px] text-primary-fixed bg-primary-fixed/10 px-1.5 py-0.5 rounded">HOT</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant">BERLIN, DE</span>
+</div>
+<h3 class="font-headline-md text-body-lg text-on-surface leading-tight group-hover:text-primary-fixed transition-colors">Techno-Anarchy: The Berghain Lockdown Myths</h3>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant text-[12px]">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">trending_up</span> 8.4k</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">chat_bubble</span> 142</span>
+</div>
+</div>
+</div>
+<!-- Pulse Item 2 -->
+<div class="glass-panel p-4 rounded-xl flex gap-4 group active:scale-[0.98] transition-transform">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 border border-white/5">
+<img class="w-full h-full object-cover" data-alt="A cinematic, low-angle shot of a stage light rig glowing through a thick haze of magenta and violet stage fog, creating a mysterious and intense festival atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1oXe24HMUFJyqtym4D0t2cg4GctQuLWGZiw7lSvQiGQIl05SIfg5gnM8OiH-WVA33Yq13fSvuUMw4miZCIDfepwsIF36L4P6ymdi7atWNRpGdDPn25WnSH_RHNXtTlr94Evv9VSLgyFuOyE6Mzox3R4lGt7AVBor2vsWUXhF9z-aCpy426YJasyRRaHL587KJuQhhnerQ0DAw7orpmWswbbCn715zUZgMsBQryoJA48tbnGcbOnvjtyKNd6P-cCzrj_TSfpMHLUo"/>
+</div>
+<div class="flex flex-col justify-between py-1">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-caps text-[10px] text-secondary-container bg-secondary-container/10 px-1.5 py-0.5 rounded">RISING</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant">TOKYO, JP</span>
+</div>
+<h3 class="font-headline-md text-body-lg text-on-surface leading-tight group-hover:text-primary-fixed transition-colors">Hyper-Pop takeover in Shibuya crossing</h3>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant text-[12px]">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">trending_up</span> 12.1k</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">chat_bubble</span> 89</span>
+</div>
+</div>
+</div>
+<!-- Pulse Item 3 -->
+<div class="glass-panel p-4 rounded-xl flex gap-4 group active:scale-[0.98] transition-transform">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 border border-white/5">
+<img class="w-full h-full object-cover" data-alt="Abstract visualization of digital sound waves in bright electric lime green against a pitch black background, symbolizing high-frequency data and modern music production." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLN2DoOhrGvKd7ELwitQ0lLnpHfcy3l5yPmAbznFRGLCk94gBb2g7bBOs3yVG3HSIPY8CZWZGpayeG6aQM7yGAz8pyrJ2Vpp9WtqD6HdJWxdC5xTi-FkbHeftS_eXYGxi2MvcOGD9reXyR_t8HZRze5SlywwnNvCsLDGkbBxgusH7Cg0Ya2UKyJG71Gejl2iPbpohTmV6YZRcN3PGMf_y8tny0a8-mWhhp6MNUYf0uHY-I7eH0BZ-WvIDv7hesnDhCni9WhmkkPZw"/>
+</div>
+<div class="flex flex-col justify-between py-1">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label-caps text-[10px] text-on-tertiary-container bg-on-tertiary-container/10 px-1.5 py-0.5 rounded">NEW</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant">LONDON, UK</span>
+</div>
+<h3 class="font-headline-md text-body-lg text-on-surface leading-tight group-hover:text-primary-fixed transition-colors">Grime's New Wave: The South London Sound</h3>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant text-[12px]">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">trending_up</span> 5.2k</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">chat_bubble</span> 56</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured News Slider (Horizontal) -->
+<section class="mt-12 space-y-4">
+<div class="px-margin-mobile">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Global Headlines</h2>
+</div>
+<div class="flex overflow-x-auto hide-scrollbar gap-gutter px-margin-mobile snap-x">
+<!-- Card 1 -->
+<div class="snap-center flex-shrink-0 w-72 h-96 relative rounded-2xl overflow-hidden group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A hyper-detailed portrait of a musician wearing futuristic LED glasses reflecting a crowded festival stage, captured in a high-contrast cinematic style with deep shadows and neon highlights." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDSEYle4utQniyXjJjfZXRZLcJM5kOxhEaClAUYp1PMYxNJpkDYnv4sbT3cS8OOkYUbMOeaxAvj2FBcaHifukvetDInTnKRSAR-4_UX_LkY04AXjL4rvGM59aCwPtdlQahDaLkzw7PByPY3Ns2opE5FqQ19Zy-_t9uoVgA4n-inopCOPE6y4BBOymJv8nv1tSKuVibKKpv__zVlD65ov4HhEsZXqzGeoEoXB2hK8wGEOPBI-4sjapvH2LVBEq4MOYCx0TEt7h2w6rg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 w-full p-6 glass-panel border-0 border-t border-white/10">
+<span class="font-label-caps text-[10px] text-primary-fixed tracking-widest block mb-2">FESTIVAL REPORT</span>
+<h4 class="font-headline-md text-on-surface leading-tight">Coachella's Hidden Underground Stage: A Review</h4>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="snap-center flex-shrink-0 w-72 h-96 relative rounded-2xl overflow-hidden group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A wide-angle landscape shot of a massive music festival at sunset, with thousands of raised hands silhouetted against a sky painted in electric pink and deep purple, high-energy atmospheric lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDqtUhAAEhMeB16J0c72FgnAmp54jCOKREvI6Rf3R3trtu7cQwQE1o11PUBSDAw3CxY2UuLX_rDflfqKU7oSoxUuoKVdBC1DD02bzm7pzZLbgc4SRY1B3XSgTnwKbbQL5swJ8r5lOmduTzdA7bu66U-d4l2M267oPcPjhOPEcurii0hUEpzoKlQxlPTvOJfDWvdmiLdp---sRjTEiZ6tYwh5hlrUZmOdR9-eLB4ybeTzqgkrdu4_kL_iafjqDNKA0tEkHB8wIdXcaI')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 w-full p-6 glass-panel border-0 border-t border-white/10">
+<span class="font-label-caps text-[10px] text-primary-fixed tracking-widest block mb-2">TECH NEWS</span>
+<h4 class="font-headline-md text-on-surface leading-tight">AI Musicians: The New Legal Frontier of 2024</h4>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 w-full z-50 md:hidden glass-panel border-0 border-t border-white/5 py-4 px-6 flex justify-between items-center rounded-t-[2rem]">
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="font-label-caps text-[10px]">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary-fixed">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">public</span>
+<span class="font-label-caps text-[10px]">Explore</span>
+</button>
+<!-- Center Action (Floating-like) -->
+<button class="w-14 h-14 bg-primary-fixed rounded-full -mt-12 shadow-[0_8px_24px_rgba(199,243,0,0.4)] flex items-center justify-center text-black active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[32px]">add</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[24px]">confirmation_number</span>
+<span class="font-label-caps text-[10px]">Passes</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="font-label-caps text-[10px]">Profile</span>
+</button>
+</nav>
+<!-- Persistent Audio Player -->
+<div class="fixed bottom-24 left-1/2 -translate-x-1/2 w-[90%] z-40 glass-panel rounded-full h-12 flex items-center px-4 gap-3 border border-white/10 shadow-2xl">
+<div class="w-8 h-8 rounded-full overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close up of a spinning vinyl record under a magenta spotlight, blurred motion suggesting high-fidelity music playback in a professional studio setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB08XlyQTLaTJ6myYa45vpu4zZbBtkjqnbXt1C1IjresapXGIg1_0jON9GD48yrF6G1V_LAugMcrUVrSmcxqqc9mXAJp6mC5-AUpplxSfiGsOkxX6CjLpnRYDm4apWLrJrjU4E2eT6fxhLBqhFrKk1dZFxrtRr5xV1v0hE-p1zWqbelz6bP4TLfNPLZrKio4FKqbmAZj1Gid5pgu5EyChtklAjFFDIKiSqEf2FMOtz7EhWI4314vqD0gpIu-O_U6E4X2TajlooDXFM"/>
+</div>
+<div class="flex-grow min-w-0">
+<p class="font-label-caps text-[10px] text-on-surface truncate">STREAMING LIVE: Tokyo Pulse Radio</p>
+<div class="w-full h-0.5 bg-white/10 rounded-full mt-1">
+<div class="w-[65%] h-full bg-primary-fixed shadow-[0_0_8px_rgba(199,243,0,0.6)]"></div>
+</div>
+</div>
+<button class="text-on-surface flex-shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+</div>
+<!-- Footer Content (Suppressed for main focus but included for hierarchy) -->
+<footer class="bg-surface-container-lowest w-full pt-16 pb-32 border-t border-white/5">
+<div class="px-margin-mobile flex flex-col gap-8">
+<h2 class="font-display-xl text-headline-lg text-primary-fixed">LivePulse</h2>
+<div class="grid grid-cols-2 gap-gutter">
+<div class="flex flex-col gap-2">
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Safety Guide</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Community</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Reddit</a>
+</div>
+<div class="flex flex-col gap-2 text-right">
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Terms</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Privacy</a>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant text-center mt-8">© 2024 LivePulse. Electric Authority in Music.</p>
+</div>
+</footer>
+<script>
+        // Micro-interaction: Map Node Hover Parallax Effect
+        document.addEventListener('mousemove', (e) => {
+            const nodes = document.querySelectorAll('.neon-pulse');
+            const x = (window.innerWidth / 2 - e.pageX) / 50;
+            const y = (window.innerHeight / 2 - e.pageY) / 50;
+            nodes.forEach(node => {
+                node.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        });
+
+        // Simulating Live Node Updates
+        setInterval(() => {
+            const countElem = document.querySelector('.text-right p:first-child');
+            if (countElem) {
+                const current = parseInt(countElem.innerText.replace(/[^0-9]/g, ''));
+                const next = current + Math.floor(Math.random() * 5) - 2;
+                countElem.innerText = `${next.toLocaleString()} ACTIVE NODES`;
+            }
+        }, 3000);
+    </script>
+</body></html>

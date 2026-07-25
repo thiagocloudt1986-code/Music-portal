@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LivePulse | Electric Authority in Music 2026</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=JetBrains+Mono:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@100..900&amp;family=Hanken+Grotesk:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#1f1f22",
+                    "surface": "#131316",
+                    "inverse-on-surface": "#303033",
+                    "primary-container": "#c7f300",
+                    "surface-dim": "#131316",
+                    "surface-variant": "#353438",
+                    "on-background": "#e4e1e6",
+                    "tertiary-fixed-dim": "#ffb1c3",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-container": "#480063",
+                    "on-tertiary-fixed": "#3f0019",
+                    "error-container": "#93000a",
+                    "secondary-container": "#cf5cff",
+                    "tertiary-fixed": "#ffd9e0",
+                    "on-secondary": "#520071",
+                    "on-secondary-fixed-variant": "#74009f",
+                    "on-tertiary-fixed-variant": "#8f0041",
+                    "tertiary": "#ffffff",
+                    "secondary-fixed": "#f8d8ff",
+                    "on-secondary-fixed": "#320047",
+                    "inverse-primary": "#526600",
+                    "on-surface-variant": "#c5c9ac",
+                    "on-primary": "#293500",
+                    "surface-container-high": "#2a2a2d",
+                    "outline-variant": "#444933",
+                    "surface-container-highest": "#353438",
+                    "outline": "#8e9378",
+                    "on-primary-fixed": "#171e00",
+                    "on-tertiary": "#66002c",
+                    "primary-fixed-dim": "#aed500",
+                    "on-tertiary-container": "#c6005d",
+                    "primary": "#ffffff",
+                    "surface-container-low": "#1b1b1e",
+                    "on-primary-fixed-variant": "#3d4d00",
+                    "on-error": "#690005",
+                    "surface-bright": "#39393c",
+                    "surface-container-lowest": "#0e0e11",
+                    "tertiary-container": "#ffd9e0",
+                    "error": "#ffb4ab",
+                    "primary-fixed": "#c7f300",
+                    "secondary-fixed-dim": "#ecb2ff",
+                    "on-surface": "#e4e1e6",
+                    "background": "#131316",
+                    "inverse-surface": "#e4e1e6",
+                    "secondary": "#ecb2ff",
+                    "on-primary-container": "#576c00",
+                    "surface-tint": "#aed500"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Hanken Grotesk"],
+                    "headline-md": ["Bricolage Grotesque"],
+                    "headline-lg-mobile": ["Bricolage Grotesque"],
+                    "display-xl-mobile": ["Bricolage Grotesque"],
+                    "headline-lg": ["Bricolage Grotesque"],
+                    "label-caps": ["JetBrains Mono"],
+                    "body-md": ["Hanken Grotesk"],
+                    "display-xl": ["Bricolage Grotesque"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                    "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-xl": ["72px", {"lineHeight": "76px", "letterSpacing": "-0.04em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .neon-glow-hover:hover {
+            box-shadow: 0 0 20px rgba(199, 243, 0, 0.2);
+            border-color: rgba(199, 243, 0, 0.4);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .text-glow {
+            text-shadow: 0 0 10px rgba(199, 243, 0, 0.3);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .pulse-dot {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        .live-dot {
+            animation: live-pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+        @keyframes live-pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(199, 243, 0, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(199, 243, 0, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(199, 243, 0, 0); }
+        }
+        @keyframes scroll-fast {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-scroll-fast {
+            animation: scroll-fast 20s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- Live Ticker (Topmost) -->
+<div class="fixed top-0 w-full z-[60] bg-primary-fixed text-on-primary-fixed overflow-hidden h-8 flex items-center border-b border-on-primary-fixed/20">
+<div class="absolute left-0 top-0 bottom-0 px-4 bg-primary-fixed z-10 flex items-center font-label-caps text-[10px] font-bold border-r border-on-primary-fixed/10">
+<span class="live-dot w-2 h-2 rounded-full bg-red-600 mr-2"></span> LIVE FEED
+        </div>
+<div class="flex whitespace-nowrap animate-scroll-fast pl-28">
+<div class="flex gap-12 font-label-caps text-[11px] items-center">
+<span>COACHELLA 2026: TRANSMISSÃO EM 4K DISPONÍVEL</span>
+<span class="opacity-50">/</span>
+<span>CURATED BY THIAGO REED: TOP 50 INDIE RELEASES</span>
+<span class="opacity-50">/</span>
+<span>NOVO SINGLE DE BILLIE EILISH VAZA NO REDDIT</span>
+<span class="opacity-50">/</span>
+<span>TICKETMASTER VR ATUALIZA SISTEMA DE FILAS</span>
+<span class="opacity-50">/</span>
+<span>OASIS SP: ÚLTIMOS 100 INGRESSOS LIBERADOS</span>
+<span class="opacity-50">/</span>
+<span>COACHELLA 2026: TRANSMISSÃO EM 4K DISPONÍVEL</span>
+</div>
+</div>
+</div>
+<!-- TopAppBar -->
+<header class="fixed top-8 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-sm">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<img alt="LivePulse Logo" class="h-10 w-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHLlFBg-b19JJiTAom9fj-v9GcpD-x-xMmtZr1rVcGwDPloKXO-6_J228IB_lxDpGbZ-0q2FhdB1RXMVUzJIjQlctT1oOG0bTEVyGJdbmubILtyQauqHX7xehFfuZjdyYcFoBI1uULjsWCfDpi8MBzvdQOpXoEOVE3MDSezJCQoIOWJKyyI6PuD7DY6oTZ7e_Npa5e5JlTDuSKG0ls4fsdyYzLzEY_HkHDDs7Z1pmYzPvjEaDFeRLajvweIm4MpiPvEsarvv_gX3g"/>
+<span class="font-display-xl-mobile text-headline-md text-primary-fixed tracking-tighter uppercase">LivePulse</span>
+</div>
+<nav class="hidden md:flex items-center gap-8 font-body-lg text-body-lg">
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors duration-300" href="#">Lineups</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors duration-300" href="#">News</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors duration-300" href="#">Reviews</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors duration-300" href="#">Festivals</a>
+</nav>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center gap-3 pr-4 border-r border-white/10">
+<span class="font-label-caps text-[9px] text-on-surface-variant uppercase">Editor-in-Chief</span>
+<span class="font-body-md font-bold text-primary-fixed">Thiago Reed</span>
+</div>
+<button class="bg-primary-fixed text-on-primary-fixed px-6 py-2 font-label-caps rounded-full scale-95 active:opacity-80 transition-transform hover:bg-primary-container">
+                    SIGN IN
+                </button>
+</div>
+</div>
+</header>
+<main class="pt-28">
+<!-- Hero Section -->
+<section class="relative w-full h-[85vh] overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center scale-105 animate-[pulse_10s_ease-in-out_infinite]" data-alt="Oasis performing at a massive stadium in 2026" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCQrgzREB3Hgs_5resj2z3TdEoxx064QLtCIPf2ePfg74Fkplql3Jg5Fi2aGu9HyIjNCUYDfkZhkorTzakhiWrORVfwwwqq7_kTMKUurKI03_YEm2T7ZsJrb9dPm9QNAs2TVUI-szhKr5hCmg_6tOGQxfIIyhLb4iWyKOGLHkqfB39Rk7SG3zUjbQcnvzDf4IrzuSJvaEbM7kwRE_AKBLsYYuz0OeYs9C7HuPCVZ_O-_oT2vZev-ly6dmiuD5AV8L4-sFjFW_HouLQ')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10 h-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col justify-end pb-16">
+<div class="inline-flex items-center gap-2 bg-secondary-container/20 border border-secondary-container/40 px-3 py-1 rounded-full mb-6 backdrop-blur-md">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed pulse-dot"></span>
+<span class="font-label-caps text-secondary-fixed">TOUR UPDATE: OASIS 2026</span>
+</div>
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl max-w-4xl mb-8 leading-none">
+                    Oasis: A Reunião que Parou o Planeta chega às <span class="text-primary-fixed live-dot inline-block px-1">Américas em 2026</span>.
+                </h1>
+<p class="text-on-surface-variant font-body-lg max-w-2xl mb-8">
+                    Datas confirmadas em São Paulo e NY. A análise definitiva da indústria, sob a curadoria de <strong>Thiago Reed</strong>.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary-fixed text-on-primary-fixed px-8 py-4 font-label-caps rounded-lg flex items-center gap-3 hover:scale-105 transition-transform shadow-[0_0_20px_rgba(199,243,0,0.3)]">
+                        VER DATAS E INGRESSOS
+                        <span class="material-symbols-outlined">confirmation_number</span>
+</button>
+<button class="glass-card text-primary px-8 py-4 font-label-caps rounded-lg hover:bg-white/10 transition-colors">
+                        SETLIST PROVÁVEL
+                    </button>
+</div>
+</div>
+</section>
+<!-- Content Grid -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-20">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- News Grid (Main Content) -->
+<div class="lg:col-span-8 space-y-12">
+<div class="bg-primary-fixed/10 border border-primary-fixed/20 rounded-2xl p-8 mb-8 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4">
+<div class="flex items-center gap-2 bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full font-label-caps text-[10px] font-bold">
+<span class="live-dot w-1.5 h-1.5 rounded-full bg-red-600"></span> TODAY'S PULSE
+                            </div>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary-fixed mb-6 uppercase tracking-tight">Daily Essentials</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="space-y-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed text-sm">bolt</span>
+<span class="font-label-caps text-[10px] text-primary-fixed/60">EDITORIAL</span>
+</div>
+<p class="font-body-md font-bold leading-tight">Curated by Thiago Reed: The Future of Stadium Tours.</p>
+</div>
+<div class="space-y-2 border-t md:border-t-0 md:border-l border-white/10 pt-4 md:pt-0 md:pl-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed text-sm">album</span>
+<span class="font-label-caps text-[10px] text-primary-fixed/60">NEW RELEASE</span>
+</div>
+<p class="font-body-md font-bold leading-tight">Linkin Park 'Zero' limited vinyl pre-orders live.</p>
+</div>
+<div class="space-y-2 border-t md:border-t-0 md:border-l border-white/10 pt-4 md:pt-0 md:pl-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-red-500 text-sm">warning</span>
+<span class="font-label-caps text-[10px] text-red-500/60">SCAM ALERT</span>
+</div>
+<p class="font-body-md font-bold leading-tight">Fake ticket sites reported for Billie Eilish MSG.</p>
+</div>
+</div>
+</div>
+<!-- SEO Section / About Editor -->
+<div class="glass-card rounded-2xl p-8 border-primary-fixed/20">
+<div class="flex flex-col md:flex-row gap-8 items-center md:items-start">
+<div class="w-32 h-32 rounded-2xl bg-gradient-to-br from-primary-fixed to-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-5xl text-on-primary-fixed">person</span>
+</div>
+<div class="space-y-4">
+<div class="flex flex-col md:flex-row md:items-center gap-3">
+<h2 class="font-headline-md text-headline-md">About Thiago Reed</h2>
+<span class="bg-primary-fixed/20 text-primary-fixed px-3 py-1 rounded-full font-label-caps text-[10px] border border-primary-fixed/30 w-fit">Music Industry Expert</span>
+<span class="bg-secondary-container/20 text-secondary-fixed px-3 py-1 rounded-full font-label-caps text-[10px] border border-secondary-container/30 w-fit">Digital Authority</span>
+</div>
+<p class="text-on-surface-variant font-body-md">
+                                    As the Editor-in-Chief and owner of LivePulse, <strong>Thiago Reed</strong> leads the global conversation on music evolution. With a vision rooted in authenticity, his insights bridge the gap between emerging technology and pure acoustic artistry. Every piece on LivePulse is <strong>Curated by Thiago Reed</strong> to ensure the highest standard of musical authority.
+                                </p>
+<div class="flex flex-wrap gap-4 pt-2">
+<a class="flex items-center gap-2 bg-black/40 hover:bg-black/60 px-4 py-2 rounded-lg transition-colors border border-white/5" href="#">
+<span class="material-symbols-outlined text-[#1DB954]">brand_awareness</span>
+<span class="font-label-caps text-[11px]">Spotify Profile</span>
+</a>
+<a class="flex items-center gap-2 bg-black/40 hover:bg-black/60 px-4 py-2 rounded-lg transition-colors border border-white/5" href="#">
+<span class="material-symbols-outlined text-[#FF9900]">music_note</span>
+<span class="font-label-caps text-[11px]">Amazon Music</span>
+</a>
+<a class="flex items-center gap-2 bg-black/40 hover:bg-black/60 px-4 py-2 rounded-lg transition-colors border border-white/5" href="#">
+<span class="material-symbols-outlined text-[#FA2D48]">podcasts</span>
+<span class="font-label-caps text-[11px]">Apple Music</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between border-b border-white/10 pb-4">
+<div class="flex items-center gap-4">
+<h2 class="font-headline-lg text-headline-lg uppercase tracking-tight">Plantão Musical</h2>
+<div class="bg-red-500/10 text-red-500 text-[10px] font-label-caps px-2 py-0.5 rounded border border-red-500/20 flex items-center gap-1">
+<span class="live-dot w-1.5 h-1.5 rounded-full bg-red-500"></span> REAL-TIME
+                            </div>
+</div>
+<span class="font-label-caps text-on-surface-variant">AGOSTO 2026</span>
+</div>
+<!-- Real-Time Latest Updates List -->
+<div class="bg-surface-container-low rounded-2xl p-6 border border-white/5 space-y-4">
+<h3 class="font-label-caps text-primary-fixed text-[11px] mb-4">LATEST UPDATES · BY THIAGO REED</h3>
+<div class="divide-y divide-white/5">
+<div class="py-3 flex justify-between items-center group cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed live-dot"></span>
+<span class="text-body-md group-hover:text-primary-fixed transition-colors">Sold out: Oasis em Buenos Aires bate recorde de 3 minutos.</span>
+</div>
+<span class="font-label-caps text-[10px] text-on-surface-variant">2 MINUTES AGO</span>
+</div>
+<div class="py-3 flex justify-between items-center group cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-variant"></span>
+<span class="text-body-md group-hover:text-primary-fixed transition-colors">Metallica anuncia residência de 4 semanas no Morumbi.</span>
+</div>
+<span class="font-label-caps text-[10px] text-on-surface-variant">4 HOURS AGO</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="group cursor-pointer">
+<div class="relative aspect-video overflow-hidden rounded-xl mb-4">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="Emily Armstrong singing with Linkin Park" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDXRtm4waOokWWEpT94TDpiPDSAz2-J_TszsrylIiU6HOT-ABUNSTkgx7pNRw8dMWKRBbLki0LPOpx0qIuyAkgI-DU8ZVOPiH9kw6z5sm4h238qclCp01ZnLFUdt_4nhv2_VUg2LUXr75j9IGfroqmINmvbcPl11vLgtT5WPs2_Xmjjr5yIWEtyKcswBYEMUUYjhQWE4nC05lUgh--4F7xcmlwPJztO-JxOWFACjnCcKcrKE9pVbDKKfiZGX22fGtpTUozQc_Wsm-k')"></div>
+<div class="absolute top-4 left-4 bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded font-label-caps text-[10px]">LIVE ERA</div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary-fixed transition-colors flex items-center gap-2">
+                                Linkin Park domina estádios com Emily Armstrong.
+                                <span class="w-2 h-2 rounded-full bg-primary-fixed live-dot inline-block"></span>
+</h3>
+<p class="text-on-surface-variant font-body-md line-clamp-2">A banda prova que o legado de Chester segue vivo em performances viscerais curadas pelo nosso time editorial.</p>
+</div>
+<div class="group cursor-pointer">
+<div class="relative aspect-video overflow-hidden rounded-xl mb-4">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="A vintage recording studio" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBOi3WzLNJUtR95xJKX2u1tPk7hI2leyUln7f1gHGgEWuWpxvs4B5XpY1GcrASJMreoyYQheAzqDM-OD0RHK8IdlgAdJIpcqhoCZN9tF5iOm2tRBQbtJEx751t26XlBKoEBiBT9RmSDMwPq4Dur43bM9QtcC1XAbRR_kdXvoy5E3gK-YHxo5LgQTraH1cQMwOv2NYYCATx9QPwANP1F_oL7u5vMXbzIKa2-_uQ4h9TVlPq-g6LQMKBN37Q1DEs_F96ttgXGE39p8P8')"></div>
+<div class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container px-3 py-1 rounded font-label-caps text-[10px]">INDUSTRY TREND</div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary-fixed transition-colors">O Retorno do Analógico: Gravações 'Human Certified'.</h3>
+<p class="text-on-surface-variant font-body-md line-clamp-2">Em um mercado saturado por IA, Thiago Reed analisa por que a autenticidade humana é o novo luxo.</p>
+</div>
+</div>
+</div>
+<!-- Sidebar -->
+<aside class="lg:col-span-4 space-y-8">
+<!-- Ticket Ranking -->
+<div class="glass-card rounded-2xl p-8 sticky top-36 border border-primary-fixed/10">
+<h3 class="font-headline-md text-headline-md mb-8 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-fixed">confirmation_number</span>
+                            Top Ingressos
+                        </h3>
+<div class="space-y-6">
+<div class="flex items-center gap-4 group">
+<span class="text-display-xl-mobile font-display-xl-mobile text-primary-fixed/20 group-hover:text-primary-fixed transition-colors">01</span>
+<div class="flex-1 border-b border-white/5 pb-4">
+<p class="font-headline-md text-body-lg">Ticketmaster VR</p>
+<p class="font-label-caps text-[10px] text-on-surface-variant uppercase">Experiências Imersivas</p>
+</div>
+<span class="material-symbols-outlined text-primary-fixed live-dot">star_rate</span>
+</div>
+<div class="flex items-center gap-4 group">
+<span class="text-display-xl-mobile font-display-xl-mobile text-white/10 group-hover:text-primary-fixed transition-colors">02</span>
+<div class="flex-1 border-b border-white/5 pb-4">
+<p class="font-headline-md text-body-lg">DICE</p>
+<p class="font-label-caps text-[10px] text-on-surface-variant uppercase">NFT Anti-Scalp</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">verified</span>
+</div>
+</div>
+<button class="w-full mt-8 py-3 bg-surface-variant hover:bg-white/10 transition-colors rounded font-label-caps text-on-surface">
+                            VER RANKING COMPLETO
+                        </button>
+</div>
+<!-- Author Focus Sidebar Card -->
+<div class="bg-primary-fixed text-on-primary-fixed rounded-2xl p-8 shadow-[0_0_30px_rgba(199,243,0,0.2)]">
+<h4 class="font-label-caps text-[10px] mb-4 opacity-70">EDITORIAL AUTHORITY</h4>
+<p class="font-headline-md text-headline-md leading-tight mb-6 italic">"Music is the only language that doesn't need a translator."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-on-primary-fixed/20 flex items-center justify-center border border-on-primary-fixed/30">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<div>
+<p class="font-label-caps font-bold text-[11px]">THIAGO REED</p>
+<p class="text-[10px] opacity-70">Editor-in-Chief &amp; Owner</p>
+</div>
+</div>
+</div>
+<!-- Reddit Feed -->
+<div class="bg-surface-container-low rounded-2xl p-8 border border-white/5">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-tertiary-fixed-dim">forum</span>
+<h3 class="font-label-caps text-on-surface-variant tracking-widest">VOZ DO REDDIT</h3>
+</div>
+<div class="space-y-6">
+<div class="space-y-2">
+<p class="font-body-md text-on-background italic">"A análise do Thiago sobre o Coachella 2026 foi cirúrgica."</p>
+<div class="flex items-center justify-between text-[11px] font-label-caps text-on-surface-variant">
+<span>u/analog_junkie</span>
+<span>10m ago</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</section>
+<!-- Lineup Billboard -->
+<section class="bg-primary-fixed text-on-primary-fixed py-12 overflow-hidden select-none border-y border-white/10">
+<div class="flex whitespace-nowrap animate-[scroll_30s_linear_infinite]">
+<div class="flex gap-12 text-display-xl-mobile font-display-xl-mobile uppercase tracking-tighter items-center">
+<span>Curated by Thiago Reed</span>
+<span class="w-4 h-4 bg-on-primary-fixed rounded-full"></span>
+<span>Music Industry Expert</span>
+<span class="w-4 h-4 bg-on-primary-fixed rounded-full"></span>
+<span>Digital Authority</span>
+<span class="w-4 h-4 bg-on-primary-fixed rounded-full"></span>
+<span>LivePulse 2026</span>
+<span class="w-4 h-4 bg-on-primary-fixed rounded-full"></span>
+<span>Oasis Americas Tour</span>
+<span class="w-4 h-4 bg-on-primary-fixed rounded-full"></span>
+<span>Curated by Thiago Reed</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full pt-16 pb-8 border-t border-white/5">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<img alt="LivePulse Footer Logo" class="h-8 w-8 grayscale opacity-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHLlFBg-b19JJiTAom9fj-v9GcpD-x-xMmtZr1rVcGwDPloKXO-6_J228IB_lxDpGbZ-0q2FhdB1RXMVUzJIjQlctT1oOG0bTEVyGJdbmubILtyQauqHX7xehFfuZjdyYcFoBI1uULjsWCfDpi8MBzvdQOpXoEOVE3MDSezJCQoIOWJKyyI6PuD7DY6oTZ7e_Npa5e5JlTDuSKG0ls4fsdyYzLzEY_HkHDDs7Z1pmYzPvjEaDFeRLajvweIm4MpiPvEsarvv_gX3g"/>
+<span class="font-display-xl text-headline-lg text-primary-fixed uppercase">LivePulse</span>
+</div>
+<p class="text-on-surface-variant font-body-md max-w-xs">
+                    The electric authority in music. Founded and Curated by <strong>Thiago Reed</strong>.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="space-y-4">
+<h4 class="font-label-caps text-primary-fixed">ECOSYSTEM</h4>
+<ul class="space-y-2 text-on-surface-variant font-body-md">
+<li><a class="hover:text-tertiary-fixed transition-colors" href="#">Lineups</a></li>
+<li><a class="hover:text-tertiary-fixed transition-colors" href="#">News</a></li>
+<li><a class="hover:text-tertiary-fixed transition-colors" href="#">Thiago Reed's Picks</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-caps text-primary-fixed">SOCIAL</h4>
+<ul class="space-y-2 text-on-surface-variant font-body-md">
+<li><a class="hover:text-tertiary-fixed transition-colors" href="#">Spotify</a></li>
+<li><a class="hover:text-tertiary-fixed transition-colors" href="#">Apple Music</a></li>
+<li><a class="hover:text-tertiary-fixed transition-colors" href="#">Amazon Music</a></li>
+</ul>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-caps text-primary-fixed">NEWSLETTER</h4>
+<div class="flex gap-2">
+<input class="flex-1 bg-surface-container border-none rounded-lg px-4 py-2 text-on-surface focus:ring-1 focus:ring-primary-fixed outline-none" placeholder="Seu e-mail" type="email"/>
+<button class="bg-white/10 hover:bg-white/20 p-2 rounded-lg transition-colors">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-on-surface-variant font-body-md">© 2026 LivePulse. Electric Authority by Thiago Reed.</p>
+<div class="flex gap-6 font-label-caps text-[10px] text-on-surface-variant">
+<span>DIGITAL AUTHORITY</span>
+<span>CURATED BY THIAGO REED</span>
+</div>
+</div>
+</footer>
+<style>
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
+<script>
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+
+        // Real-time Update Simulator
+        let seconds = 2;
+        const timerElement = document.getElementById('update-timer');
+        if(timerElement) {
+            setInterval(() => {
+                seconds++;
+                if (seconds > 10) seconds = 0;
+                timerElement.innerText = `${seconds}s ago`;
+            }, 1000);
+        }
+    </script>
+</body></html>
