@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LivePulse | Electric Authority in Music 2026</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=JetBrains+Mono:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@100..900&amp;family=Hanken+Grotesk:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#1f1f22",
+                    "surface": "#131316",
+                    "inverse-on-surface": "#303033",
+                    "primary-container": "#c7f300",
+                    "surface-dim": "#131316",
+                    "surface-variant": "#353438",
+                    "on-background": "#e4e1e6",
+                    "tertiary-fixed-dim": "#ffb1c3",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-container": "#480063",
+                    "on-tertiary-fixed": "#3f0019",
+                    "error-container": "#93000a",
+                    "secondary-container": "#cf5cff",
+                    "tertiary-fixed": "#ffd9e0",
+                    "on-secondary": "#520071",
+                    "on-secondary-fixed-variant": "#74009f",
+                    "on-tertiary-fixed-variant": "#8f0041",
+                    "tertiary": "#ffffff",
+                    "secondary-fixed": "#f8d8ff",
+                    "on-secondary-fixed": "#320047",
+                    "inverse-primary": "#526600",
+                    "on-surface-variant": "#c5c9ac",
+                    "on-primary": "#293500",
+                    "surface-container-high": "#2a2a2d",
+                    "outline-variant": "#444933",
+                    "surface-container-highest": "#353438",
+                    "outline": "#8e9378",
+                    "on-primary-fixed": "#171e00",
+                    "on-tertiary": "#66002c",
+                    "primary-fixed-dim": "#aed500",
+                    "on-tertiary-container": "#c6005d",
+                    "primary": "#ffffff",
+                    "surface-container-low": "#1b1b1e",
+                    "on-primary-fixed-variant": "#3d4d00",
+                    "on-error": "#690005",
+                    "surface-bright": "#39393c",
+                    "surface-container-lowest": "#0e0e11",
+                    "tertiary-container": "#ffd9e0",
+                    "error": "#ffb4ab",
+                    "primary-fixed": "#c7f300",
+                    "secondary-fixed-dim": "#ecb2ff",
+                    "on-surface": "#e4e1e6",
+                    "background": "#131316",
+                    "inverse-surface": "#e4e1e6",
+                    "secondary": "#ecb2ff",
+                    "on-primary-container": "#576c00",
+                    "surface-tint": "#aed500"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Hanken Grotesk"],
+                    "headline-md": ["Bricolage Grotesque"],
+                    "headline-lg-mobile": ["Bricolage Grotesque"],
+                    "display-xl-mobile": ["Bricolage Grotesque"],
+                    "headline-lg": ["Bricolage Grotesque"],
+                    "label-caps": ["JetBrains Mono"],
+                    "body-md": ["Hanken Grotesk"],
+                    "display-xl": ["Bricolage Grotesque"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                    "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-xl": ["72px", {"lineHeight": "76px", "letterSpacing": "-0.04em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .neon-glow-hover:hover {
+            box-shadow: 0 0 20px rgba(199, 243, 0, 0.2);
+            border-color: rgba(199, 243, 0, 0.4);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .text-glow {
+            text-shadow: 0 0 10px rgba(199, 243, 0, 0.3);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .pulse-dot {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-sm">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<img alt="LivePulse Logo" class="h-10 w-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHLlFBg-b19JJiTAom9fj-v9GcpD-x-xMmtZr1rVcGwDPloKXO-6_J228IB_lxDpGbZ-0q2FhdB1RXMVUzJIjQlctT1oOG0bTEVyGJdbmubILtyQauqHX7xehFfuZjdyYcFoBI1uULjsWCfDpi8MBzvdQOpXoEOVE3MDSezJCQoIOWJKyyI6PuD7DY6oTZ7e_Npa5e5JlTDuSKG0ls4fsdyYzLzEY_HkHDDs7Z1pmYzPvjEaDFeRLajvweIm4MpiPvEsarvv_gX3g"/>
+<span class="font-display-xl-mobile text-headline-md text-primary-fixed tracking-tighter uppercase">LivePulse</span>
+</div>
+<nav class="hidden md:flex items-center gap-8 font-body-lg text-body-lg">
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors duration-300" href="#">Lineups</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors duration-300" href="#">News</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors duration-300" href="#">Reviews</a>
+<a class="text-on-surface-variant hover:text-primary-fixed transition-colors duration-300" href="#">Festivals</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="hidden md:flex items-center gap-2 text-on-surface-variant hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="bg-primary-fixed text-on-primary-fixed px-6 py-2 font-label-caps rounded-full scale-95 active:opacity-80 transition-transform hover:bg-primary-container">
+                    SIGN IN
+                </button>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative w-full h-[85vh] overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center scale-105 animate-[pulse_10s_ease-in-out_infinite]" data-alt="A high-energy, cinematic photograph of a massive music festival stage in 2026, featuring holograms and neon bio-luminescent lighting. Thousands of silhouetted festival-goers have their hands raised. The color palette is dominated by vibrant lime glows and deep purple shadows." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCQrgzREB3Hgs_5resj2z3TdEoxx064QLtCIPf2ePfg74Fkplql3Jg5Fi2aGu9HyIjNCUYDfkZhkorTzakhiWrORVfwwwqq7_kTMKUurKI03_YEm2T7ZsJrb9dPm9QNAs2TVUI-szhKr5hCmg_6tOGQxfIIyhLb4iWyKOGLHkqfB39Rk7SG3zUjbQcnvzDf4IrzuSJvaEbM7kwRE_AKBLsYYuz0OeYs9C7HuPCVZ_O-_oT2vZev-ly6dmiuD5AV8L4-sFjFW_HouLQ')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10 h-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col justify-end pb-16">
+<div class="inline-flex items-center gap-2 bg-secondary-container/20 border border-secondary-container/40 px-3 py-1 rounded-full mb-6 backdrop-blur-md">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed pulse-dot"></span>
+<span class="font-label-caps text-secondary-fixed">LIVE: AGOSTO FEST 2026</span>
+</div>
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl max-w-4xl mb-8 leading-none">
+                    O Paradoxo da Autenticidade Tech: Bastidores do <span class="text-primary-fixed">Agosto Fest 2026</span>.
+                </h1>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary-fixed text-on-primary-fixed px-8 py-4 font-label-caps rounded-lg flex items-center gap-3 hover:scale-105 transition-transform">
+                        LER REPORTAGEM COMPLETA
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="glass-card text-primary px-8 py-4 font-label-caps rounded-lg hover:bg-white/10 transition-colors">
+                        GALERIA DE FOTOS
+                    </button>
+</div>
+</div>
+</section>
+<!-- Content Grid -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-20">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- News Grid (Main Content) -->
+<div class="lg:col-span-8 space-y-12">
+<div class="flex items-center justify-between border-b border-white/10 pb-4">
+<h2 class="font-headline-lg text-headline-lg uppercase tracking-tight">Manchetes de Agosto</h2>
+<span class="font-label-caps text-on-surface-variant">AGOSTO 2026</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Featured News 1 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-video overflow-hidden rounded-xl mb-4">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="Olivia Rodrigo performing in 2026 with a gritty, neon-grunge aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDXRtm4waOokWWEpT94TDpiPDSAz2-J_TszsrylIiU6HOT-ABUNSTkgx7pNRw8dMWKRBbLki0LPOpx0qIuyAkgI-DU8ZVOPiH9kw6z5sm4h238qclCp01ZnLFUdt_4nhv2_VUg2LUXr75j9IGfroqmINmvbcPl11vLgtT5WPs2_Xmjjr5yIWEtyKcswBYEMUUYjhQWE4nC05lUgh--4F7xcmlwPJztO-JxOWFACjnCcKcrKE9pVbDKKfiZGX22fGtpTUozQc_Wsm-k')"></div>
+<div class="absolute top-4 left-4 bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded font-label-caps text-[10px]">NEW RELEASE</div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary-fixed transition-colors">Olivia Rodrigo lança 'LOVESTRUCK': O despertar do grunge em 2026.</h3>
+<p class="text-on-surface-variant font-body-md line-clamp-2">A artista redefine o gênero com distorções analógicas e letras viscerais que capturam a ansiedade da década.</p>
+</div>
+<!-- Featured News 2 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-video overflow-hidden rounded-xl mb-4">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="BTS performing with holographic Bio-Sync interfaces visible on screen." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBOi3WzLNJUtR95xJKX2u1tPk7hI2leyUln7f1gHGgEWuWpxvs4B5XpY1GcrASJMreoyYQheAzqDM-OD0RHK8IdlgAdJIpcqhoCZN9tF5iOm2tRBQbtJEx751t26XlBKoEBiBT9RmSDMwPq4Dur43bM9QtcC1XAbRR_kdXvoy5E3gK-YHxo5LgQTraH1cQMwOv2NYYCATx9QPwANP1F_oL7u5vMXbzIKa2-_uQ4h9TVlPq-g6LQMKBN37Q1DEs_F96ttgXGE39p8P8')"></div>
+<div class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container px-3 py-1 rounded font-label-caps text-[10px]">TECH TOUR</div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary-fixed transition-colors">BTS Reunion Tour: Como a tecnologia Bio-Sync monitora a performance.</h3>
+<p class="text-on-surface-variant font-body-md line-clamp-2">Sincronização biométrica em tempo real entre artistas e público marca o retorno triunfal do grupo aos estádios.</p>
+</div>
+</div>
+<!-- Bento Section -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 glass-card p-8 rounded-2xl flex flex-col justify-between group hover:border-primary-fixed/30 transition-all">
+<div>
+<span class="font-label-caps text-primary-fixed mb-4 block">EXCLUSIVO</span>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile leading-tight mb-4">Rihanna confirma projeto caribenho de disco duplo para setembro de 2026.</h3>
+<p class="text-on-surface-variant font-body-md mb-6">Uma fusão experimental de dancehall clássico e sintetizadores modulares gravada inteiramente em Barbados.</p>
+</div>
+<button class="w-fit font-label-caps border-b border-primary-fixed text-primary-fixed pb-1 group-hover:gap-4 transition-all flex items-center gap-2">
+                                LER ENTREVISTA <span class="material-symbols-outlined text-sm">trending_flat</span>
+</button>
+</div>
+<div class="bg-surface-container rounded-2xl p-6 border border-white/5 relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="font-label-caps text-on-surface-variant mb-4">TENDÊNCIA 2026</h4>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-variant rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-fixed">blur_on</span>
+</div>
+<div>
+<p class="font-body-md font-bold">Neo-Folk-Glitch</p>
+<p class="text-[12px] text-on-surface-variant">O som que domina os charts</p>
+</div>
+</div>
+<div class="flex items-center gap-3 opacity-60">
+<div class="w-10 h-10 bg-surface-variant rounded"></div>
+<div>
+<p class="font-body-md font-bold">Spatial Hyper-Pop</p>
+<p class="text-[12px] text-on-surface-variant">Imersão 360°</p>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-8xl">graphic_eq</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar -->
+<aside class="lg:col-span-4 space-y-8">
+<!-- Ticket Ranking -->
+<div class="glass-card rounded-2xl p-8 sticky top-28 border border-primary-fixed/10">
+<h3 class="font-headline-md text-headline-md mb-8 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-fixed">confirmation_number</span>
+                            Top Portais de Ingressos
+                        </h3>
+<div class="space-y-6">
+<!-- Rank 1 -->
+<div class="flex items-center gap-4 group">
+<span class="text-display-xl-mobile font-display-xl-mobile text-primary-fixed/20 group-hover:text-primary-fixed transition-colors">01</span>
+<div class="flex-1 border-b border-white/5 pb-4">
+<p class="font-headline-md text-body-lg">Ticketmaster VR</p>
+<p class="font-label-caps text-[10px] text-on-surface-variant uppercase">Líder em Experiências Imersivas</p>
+</div>
+<span class="material-symbols-outlined text-primary-fixed">star_rate</span>
+</div>
+<!-- Rank 2 -->
+<div class="flex items-center gap-4 group">
+<span class="text-display-xl-mobile font-display-xl-mobile text-white/10 group-hover:text-primary-fixed transition-colors">02</span>
+<div class="flex-1 border-b border-white/5 pb-4">
+<p class="font-headline-md text-body-lg">DICE</p>
+<p class="font-label-caps text-[10px] text-on-surface-variant uppercase">Bilhetagem NFT Anti-Scalp</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">verified</span>
+</div>
+<!-- Rank 3 -->
+<div class="flex items-center gap-4 group">
+<span class="text-display-xl-mobile font-display-xl-mobile text-white/10 group-hover:text-primary-fixed transition-colors">03</span>
+<div class="flex-1 border-b border-white/5 pb-4">
+<p class="font-headline-md text-body-lg">LiveNation Direct</p>
+<p class="font-label-caps text-[10px] text-on-surface-variant uppercase">Vendas via Bio-ID</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">trending_up</span>
+</div>
+</div>
+<button class="w-full mt-8 py-3 bg-surface-variant hover:bg-white/10 transition-colors rounded font-label-caps text-on-surface">
+                            VER RANKING COMPLETO
+                        </button>
+</div>
+<!-- Reddit Feed (Voz do Reddit) -->
+<div class="bg-surface-container-low rounded-2xl p-8 border border-white/5">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-tertiary-fixed-dim">forum</span>
+<h3 class="font-label-caps text-on-surface-variant tracking-widest">VOZ DO REDDIT: RUMORES 2026</h3>
+</div>
+<div class="space-y-6">
+<div class="space-y-2">
+<p class="font-body-md text-on-background italic">"Alguém mais viu o leak do One Direction? Os contratos de 2026 parecem reais dessa vez, dizem que o anúncio vem no Natal."</p>
+<div class="flex items-center justify-between text-[11px] font-label-caps text-on-surface-variant">
+<span>u/directioner_forever26</span>
+<span>r/popheads</span>
+</div>
+</div>
+<div class="space-y-2 border-t border-white/5 pt-6">
+<p class="font-body-md text-on-background italic">"Os palcos VR do Tomorrowland estão em outro nível. Assisti de casa com o headset e parecia que eu estava literalmente no Mainstage."</p>
+<div class="flex items-center justify-between text-[11px] font-label-caps text-on-surface-variant">
+<span>u/meta_raver</span>
+<span>r/tomorrowland</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</section>
+<!-- Lineup Billboard -->
+<section class="bg-primary-fixed text-on-primary-fixed py-12 overflow-hidden select-none">
+<div class="flex whitespace-nowrap animate-[scroll_30s_linear_infinite]">
+<div class="flex gap-12 text-display-xl-mobile font-display-xl-mobile uppercase tracking-tighter items-center">
+<span>One Direction Reunion?</span>
+<span class="w-4 h-4 bg-on-primary-fixed rounded-full"></span>
+<span>Rihanna Double Album</span>
+<span class="w-4 h-4 bg-on-primary-fixed rounded-full"></span>
+<span>BTS Bio-Sync Live</span>
+<span class="w-4 h-4 bg-on-primary-fixed rounded-full"></span>
+<span>Neo-Folk-Glitch Takeover</span>
+<span class="w-4 h-4 bg-on-primary-fixed rounded-full"></span>
+<span>Tomorrowland VR Stages</span>
+<span class="w-4 h-4 bg-on-primary-fixed rounded-full"></span>
+<span>One Direction Reunion?</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full pt-16 pb-8 border-t border-white/5">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<img alt="LivePulse Footer Logo" class="h-8 w-8 grayscale opacity-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHLlFBg-b19JJiTAom9fj-v9GcpD-x-xMmtZr1rVcGwDPloKXO-6_J228IB_lxDpGbZ-0q2FhdB1RXMVUzJIjQlctT1oOG0bTEVyGJdbmubILtyQauqHX7xehFfuZjdyYcFoBI1uULjsWCfDpi8MBzvdQOpXoEOVE3MDSezJCQoIOWJKyyI6PuD7DY6oTZ7e_Npa5e5JlTDuSKG0ls4fsdyYzLzEY_HkHDDs7Z1pmYzPvjEaDFeRLajvweIm4MpiPvEsarvv_gX3g"/>
+<span class="font-display-xl text-headline-lg text-primary-fixed uppercase">LivePulse</span>
+</div>
+<p class="text-on-surface-variant font-body-md max-w-xs">
+                    A autoridade elétrica em música. Notícias, coberturas e insights profundos sobre a indústria global em 2026.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="space-y-4">
+<h4 class="font-label-caps text-primary-fixed">ECOSYSTEM</h4>
+<ul class="space-y-2 text-on-surface-variant font-body-md">
+<li><a class="hover:text-tertiary-fixed transition-colors" href="#">Lineups</a></li>
+<li><a class="hover:text-tertiary-fixed transition-colors" href="#">News</a></li>
+<li><a class="hover:text-tertiary-fixed transition-colors" href="#">Reddit Feed</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-caps text-primary-fixed">LEGAL</h4>
+<ul class="space-y-2 text-on-surface-variant font-body-md">
+<li><a class="hover:text-tertiary-fixed transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-tertiary-fixed transition-colors" href="#">Terms</a></li>
+<li><a class="hover:text-tertiary-fixed transition-colors" href="#">Safety Guide</a></li>
+</ul>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-caps text-primary-fixed">NEWSLETTER</h4>
+<div class="flex gap-2">
+<input class="flex-1 bg-surface-container border-none rounded-lg px-4 py-2 text-on-surface focus:ring-1 focus:ring-primary-fixed outline-none" placeholder="Seu e-mail" type="email"/>
+<button class="bg-white/10 hover:bg-white/20 p-2 rounded-lg transition-colors">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary-fixed cursor-pointer">share</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary-fixed cursor-pointer">podcasts</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary-fixed cursor-pointer">stadium</span>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-on-surface-variant font-body-md">© 2026 LivePulse. Electric Authority in Music.</p>
+<div class="flex gap-6 font-label-caps text-[10px] text-on-surface-variant">
+<span>REDDIT COMMUNITY</span>
+<span>GLOBAL NEWS NETWORK</span>
+</div>
+</div>
+</footer>
+<style>
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
+<script>
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body></html>
