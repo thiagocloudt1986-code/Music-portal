@@ -1,0 +1,6 @@
+{
+  "name": "LivePulse Music Portal",
+  "description": "Global real-time music wire, tour heatmaps, ticket platform rankings, anti-scam guides, and AI tour insights.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
